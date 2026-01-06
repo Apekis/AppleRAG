@@ -11,8 +11,7 @@ app = FastAPI(title="ApplePay RAG")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],
-      #"https://<your-public-frontend-domain>"
+    allow_origins=["http://localhost:5173", "https://www.applepayrag.de"]
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
