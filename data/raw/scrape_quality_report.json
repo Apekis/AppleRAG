@@ -1,0 +1,14 @@
+{
+  "BeautifulSoup": {
+    "method": "BeautifulSoup",
+    "#pages": 74,
+    "#tokens": 295217,
+    "avg_noise_ratio": 0.0695
+  },
+  "Trafilatura": {
+    "method": "Trafilatura",
+    "#pages": 5,
+    "#tokens": 4493,
+    "avg_noise_ratio": 0.0281
+  }
+}
