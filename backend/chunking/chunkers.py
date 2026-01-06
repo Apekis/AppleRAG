@@ -113,14 +113,12 @@ def structure_chunk_text(text):
 #LLM based chunker------------------------------------------------------------------
 from openai import OpenAI
 import os
-os.environ["OPENAI_API_KEY"]="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"
-
 
 def llm_chunk_text(text, chunk_size=1000, model="gpt-4o-mini", api_key=None):
     """
     Uses an LLM to find semantically coherent chunk boundaries around a target chunk size.
     """
-    client = OpenAI(api_key=api_key)
+    client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
     def get_chunk_boundary(text_segment):
         prompt = f"""
         Analyze the following text and identify the best point to split it

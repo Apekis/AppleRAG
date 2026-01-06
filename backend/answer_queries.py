@@ -49,8 +49,7 @@ def retrieve(query: str, top_k: int = 6):
 
 
 def answer(query: str, contexts: List[Dict]) -> Dict:
-    #client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
-    client = OpenAI(api_key="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")
+    client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
     sys = "You are a customer support assistant for Apple Pay. Answer strictly using the provided context and cite sources."
     citations_md = "\n\n".join([f"[{i+1}] {c['meta']['title'] or c['meta']['url']} — {c['meta']['url']}" for i, c in enumerate(contexts)])
     context_text = "\n\n---\n\n".join([c["text"] for c in contexts])
