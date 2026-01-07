@@ -3,7 +3,7 @@ import os
 import sys
 from fastapi import FastAPI, Query
 from fastapi.middleware.cors import CORSMiddleware
-from sse_starlette.sse import EventSourceResponse
+from starlette.responses import EventSourceResponse
 from dotenv import load_dotenv
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
