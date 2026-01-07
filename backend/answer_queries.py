@@ -1,8 +1,11 @@
 
 from typing import Dict, List, Tuple
 from openai import OpenAI
-import os
-from backend.embeddings.e5_embed import embed_texts as e5_embed
+import os, sys
+
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+
+from embeddings.e5_embed import embed_texts as e5_embed
 import time
 import json
 

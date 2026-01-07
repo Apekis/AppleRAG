@@ -1,9 +1,12 @@
 #emdedings
-from backend.embeddings.e5_embed import embed_texts as e5_embed
-from backend.embeddings.bge_embed import embed_texts as bge_embed
-from backend.vectorstore.chroma_store import get_chroma, upsert_docs
-from backend.embeddings.minilm_embed import embed_texts as minilm_embed
-from backend.vectorstore.faiss_store import FaissStore
+import sys
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+
+from embeddings.e5_embed import embed_texts as e5_embed
+from embeddings.bge_embed import embed_texts as bge_embed
+from vectorstore.chroma_store import get_chroma, upsert_docs
+from embeddings.minilm_embed import embed_texts as minilm_embed
+from vectorstore.faiss_store import FaissStore
 import faiss
 
 import json
