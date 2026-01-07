@@ -8,7 +8,6 @@ playwright==1.47.0
 python-dotenv==1.0.1
 tiktoken==0.7.0
 numpy==1.26.4
-pandas==2.2.2
 scikit-learn==1.4.2
 sentence-transformers==3.0.1
 faiss-cpu==1.8.0
