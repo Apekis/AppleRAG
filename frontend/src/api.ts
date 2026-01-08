@@ -9,9 +9,8 @@ const API = ky.create({
 export const chat = async (q: string, top_k = 6) =>
   API.get("chat", { searchParams: { q, top_k } }).json<any>();
 
-// NEW: search endpoint to fetch retrieved chunks
 export const search = async (q: string, top_k = 6) =>
   API.get("search", { searchParams: { q, top_k } }).json<any>();
 
-export const build = async (chunk_strategy = "recursive", embedder = "openai") =>
-  API.post("build", { searchParams: { chunk_strategy, embedder } }).json<any>();
+export const build = async (embedder = "e5") =>
+  API.post("build", { searchParams: {embedder } }).json<any>();

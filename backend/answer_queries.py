@@ -6,12 +6,10 @@ import os, sys
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 from embeddings.e5_embed import embed_texts as e5_embed
+from embeddings.bge_embed import embed_texts as bge_embed
 import time
 import json
 
-
-indexfile="index_e5.faiss"
-docsfile="docs_e5.json"
 
 def retrieve(query: str, top_k: int = 6):
     embed_fn = e5_embed
@@ -19,20 +17,22 @@ def retrieve(query: str, top_k: int = 6):
     results = []
 
     # FAISS retrieval
-    index_dir = "data/index/faiss"
-    index_path = os.path.join(index_dir, indexfile)
-    docs_path = os.path.join(index_dir, docsfile)
+    indexfile="index.faiss"
+    docsfile="docs.json"
+    # index_dir = "../data/index/faiss"
+    # index_path = os.path.join(index_dir, indexfile)
+    # docs_path = os.path.join(index_dir, docsfile)
 
-    if not os.path.exists(index_path) or not os.path.exists(docs_path):
+    if not os.path.exists(indexfile) or not os.path.exists(docsfile):
         raise FileNotFoundError("FAISS index or docs.json not found. Run build_index first.")
 
     # Load FAISS index
     import faiss
     import numpy as np
-    with open(docs_path, "r", encoding="utf-8") as f:
+    with open(docsfile, "r", encoding="utf-8") as f:
         docs = json.load(f)
 
-    index = faiss.read_index(index_path)
+    index = faiss.read_index(indexfile)
     q = np.array([qv]).astype("float32")
     faiss.normalize_L2(q)
     D, I = index.search(q, top_k)

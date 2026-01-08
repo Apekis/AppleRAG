@@ -21,8 +21,7 @@ def choose_embedder(name: str):
     raise ValueError("Unknown embedder")
 
 def build_index(pages_path="data/processed/pages.json",
-                chunk_strategy="recursive",
-                embedder_name="openai"):
+                embedder_name="bge"):
     # load pages
     with open(pages_path,"r",encoding="utf-8") as f:
         pages = json.load(f)
