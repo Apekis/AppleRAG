@@ -9,8 +9,9 @@ Production-grade RAG chatbot answering Apple Pay support queries using only publ
 
 In order to start the service locally, please intall the requierments.txt dependencies.
 Add your OPENAI_API_KEY key as an env. variable.
-Then start the backend with uvicorn backend.app:app --host 0.0.0.0 --port 8000 --reload from the top ("RAG") directory.
-And start the frontend with npm run dev --prefix frontend also from the "RAG" directory.
+Then start the frontend with npm run dev --prefix frontend from the top ("RAG") directory.
+Then start the backend with uvicorn app:app --host 0.0.0.0 --port 8000 --reload from the backend ("RAG\backend") directory.
+
 
 ## Usage
 

@@ -19,7 +19,7 @@ def retrieve(query: str, top_k: int = 6):
     # FAISS retrieval
     indexfile="index.faiss"
     docsfile="docs.json"
-    # index_dir = "../data/index/faiss"
+    # index_dir = "data/index/faiss"
     # index_path = os.path.join(index_dir, indexfile)
     # docs_path = os.path.join(index_dir, docsfile)
 
